@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        #documentBody {
+            background-color:lightblue;
+        }
+        #header {
+            text-align:center;
+            font-size:3em;
+            font-weight:bold;
+            font-family:'Agency FB';
+        }
+        tr.rowCell {
+            height:150px;
+        }
+        td.eventcell {
+            width:150px;
+            align-content:center;
+        }
+    </style>
+    <script src="events.js"></script>
+    <title>Event Calendar</title>
+</head>
+<body id="documentBody">
+    <div id="header">February Events</div>
+    <table border="1" align="center">
+        <tr class="rowCell">
+            <td class="eventcell"></td>
+            <td class="eventcell"></td>
+            <td class="eventcell"></td>
+            <td class="eventcell"></td>
+            <td class="eventcell" id="1" onclick="showEvents()">1</td>
+            <td class="eventcell">2</td>
+            <td class="eventcell">3</td>
+        </tr>
+        <tr class="rowCell">
+            <td class="eventcell">4</td>
+            <td class="eventcell">5</td>
+            <td class="eventcell">6</td>
+            <td class="eventcell">7</td>
+            <td class="eventcell">8</td>
+            <td class="eventcell">9</td>
+            <td class="eventcell">10</td>
+        </tr>
+        <tr class="rowCell">
+            <td class="eventcell">11</td>
+            <td class="eventcell">12</td>
+            <td class="eventcell">13</td>
+            <td class="eventcell">14</td>
+            <td class="eventcell">15</td>
+            <td class="eventcell">16</td>
+            <td class="eventcell">17</td>
+        </tr>
+        <tr class="rowCell">
+            <td class="eventcell">18</td>
+            <td class="eventcell">19</td>
+            <td class="eventcell">20</td>
+            <td class="eventcell">21</td>
+            <td class="eventcell">22</td>
+            <td class="eventcell">23</td>
+            <td class="eventcell">24</td>
+        </tr>
+        <tr class="rowCell">
+            <td class="eventcell">25</td>
+            <td class="eventcell">26</td>
+            <td class="eventcell">27</td>
+            <td class="eventcell">28</td>
+            <td class="eventcell"></td>
+            <td class="eventcell"></td>
+            <td class="eventcell"></td>
+        </tr>
+    </table>
+</body>
+</html>
