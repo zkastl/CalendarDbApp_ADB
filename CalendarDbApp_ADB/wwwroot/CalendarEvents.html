@@ -1,4 +1,25 @@
-﻿<!DOCTYPE html>
+﻿<!--
+    Calendar Events App
+    by: Zak Kastl
+
+    Abstract: This single-page web app is designed to simulate a dynamic calendar event
+    system. The app is bound to a "database" of events, hard-coded in this example, but
+    easily bound to a server. Each cell uses its id to pull the events in the database 
+    that coorespond to that date for February and display them in the cell.
+
+    The app is divided into three sections: CSS, JS, HTML
+    CSS: Describes the layout of the calendar
+
+    JS: The meat of the project. Defines a class that describes a basic event, with an
+    auto-incrementing id, a title, start datetime, and enddatetime. Default events are 
+    created for this app and getEvents returns the events that match the date criteria.
+    Showing the events uses the id to determine the date to pick and alters the HTML
+    to add the events, should they exist for that date.
+
+    HTML: Currently hardcoded rows and cells to make up a calendar for February. This
+    could be expanded later to have the JS section to automatically generate the table.
+-->
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -11,7 +32,7 @@
             text-align:center;
             font-size:3em;
             font-weight:bold;
-            font-family:'Agency FB';
+            font-family:sans-serif;
         }
         tr.rowCell {
             height:150px;
@@ -20,8 +41,11 @@
             width:150px;
             align-content:center;
         }
+        #instructions {
+            text-align: center;
+        }
     </style>
-    <script src="events.js"></script>
+    <script src="js/events.js"></script>
     <title>Event Calendar</title>
 </head>
 <body id="documentBody">
@@ -32,46 +56,54 @@
             <td class="eventcell"></td>
             <td class="eventcell"></td>
             <td class="eventcell"></td>
-            <td class="eventcell" id="1" onclick="showEvents()">1</td>
-            <td class="eventcell">2</td>
-            <td class="eventcell">3</td>
+            <td class="eventcell" id="1" onclick="showEvents(id)">1</td>
+            <td class="eventcell" id="2" onclick="showEvents(id)">2</td>
+            <td class="eventcell" id="3" onclick="showEvents(id)">3</td>
         </tr>
         <tr class="rowCell">
-            <td class="eventcell">4</td>
-            <td class="eventcell">5</td>
-            <td class="eventcell">6</td>
-            <td class="eventcell">7</td>
-            <td class="eventcell">8</td>
-            <td class="eventcell">9</td>
-            <td class="eventcell">10</td>
+            <td class="eventcell" id="4" onclick="showEvents(id)">4</td>
+            <td class="eventcell" id="5" onclick="showEvents(id)">5</td>
+            <td class="eventcell" id="6" onclick="showEvents(id)">6</td>
+            <td class="eventcell" id="7" onclick="showEvents(id)">7</td>
+            <td class="eventcell" id="8" onclick="showEvents(id)">8</td>
+            <td class="eventcell" id="9" onclick="showEvents(id)">9</td>
+            <td class="eventcell" id="10" onclick="showEvents(id)">10</td>
         </tr>
         <tr class="rowCell">
-            <td class="eventcell">11</td>
-            <td class="eventcell">12</td>
-            <td class="eventcell">13</td>
-            <td class="eventcell">14</td>
-            <td class="eventcell">15</td>
-            <td class="eventcell">16</td>
-            <td class="eventcell">17</td>
+            <td class="eventcell" id="11" onclick="showEvents(id)">11</td>
+            <td class="eventcell" id="12" onclick="showEvents(id)">12</td>
+            <td class="eventcell" id="13" onclick="showEvents(id)">13</td>
+            <td class="eventcell" id="14" onclick="showEvents(id)">14</td>
+            <td class="eventcell" id="15" onclick="showEvents(id)">15</td>
+            <td class="eventcell" id="16" onclick="showEvents(id)">16</td>
+            <td class="eventcell" id="17" onclick="showEvents(id)">17</td>
         </tr>
         <tr class="rowCell">
-            <td class="eventcell">18</td>
-            <td class="eventcell">19</td>
-            <td class="eventcell">20</td>
-            <td class="eventcell">21</td>
-            <td class="eventcell">22</td>
-            <td class="eventcell">23</td>
-            <td class="eventcell">24</td>
+            <td class="eventcell" id="18" onclick="showEvents(id)">18</td>
+            <td class="eventcell" id="19" onclick="showEvents(id)">19</td>
+            <td class="eventcell" id="20" onclick="showEvents(id)">20</td>
+            <td class="eventcell" id="21" onclick="showEvents(id)">21</td>
+            <td class="eventcell" id="22" onclick="showEvents(id)">22</td>
+            <td class="eventcell" id="23" onclick="showEvents(id)">23</td>
+            <td class="eventcell" id="24" onclick="showEvents(id)">24</td>
         </tr>
         <tr class="rowCell">
-            <td class="eventcell">25</td>
-            <td class="eventcell">26</td>
-            <td class="eventcell">27</td>
-            <td class="eventcell">28</td>
+            <td class="eventcell" id="25" onclick="showEvents(id)">25</td>
+            <td class="eventcell" id="26" onclick="showEvents(id)">26</td>
+            <td class="eventcell" id="27" onclick="showEvents(id)">27</td>
+            <td class="eventcell" id="28" onclick="showEvents(id)">28</td>
             <td class="eventcell"></td>
             <td class="eventcell"></td>
             <td class="eventcell"></td>
         </tr>
     </table>
+    <div id="instructions">
+        <p>
+            Instructions: Please click on a cell to display an event that may or may 
+            not be listed for that date. While the events are hard coded into this app, 
+            it could be easily extended to perform a get/post request to some server 
+            to pull data from. Clicking on a cell with events showing will hide the events for that date.
+        </p>
+    </div>
 </body>
 </html>
